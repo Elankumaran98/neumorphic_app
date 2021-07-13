@@ -166,19 +166,109 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   NeumorphicButton(
-                    onPressed: (){},
+                    onPressed: (){
+                    },
                     style: NeumorphicStyle(
                       shape: NeumorphicShape.flat,
                     ),
                     padding: const EdgeInsets.all(12),
-                    child: Icon(Icons.favorite_border),
+                    child: Icon(Icons.favorite_border,
+                    color: _iconsColor(context),
+                    size: 40,),
+
+                  ),
+                  NeumorphicButton(
+                    onPressed: (){
+                      NeumorphicTheme.of(context)!.themeMode=
+                      NeumorphicTheme.isUsingDark(context)
+                          ?ThemeMode.light:ThemeMode.dark;
+                    },
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.flat,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Icon(Icons.toggle_off_outlined,
+                      color: _iconsColor(context),
+                      size: 40,),
+
                   )
                 ],
+              ),
+              SizedBox(height: 20,),
+              NeumorphicButton(
+                onPressed: (){
+
+                },
+                style: NeumorphicStyle(
+                  shape: NeumorphicShape.flat,
+                ),
+                padding: const EdgeInsets.all(12),
+                child: Padding(padding: const EdgeInsets.all(20),
+                child: Container(
+                  child: Image.asset("assets/img/pic-3.png"),
+                ),),
+
+              ),
+              SizedBox(height: 20,),
+              NeumorphicButton(
+                onPressed: (){
+
+                },
+                style: NeumorphicStyle(
+                  shape: NeumorphicShape.flat,
+                ),
+                padding: const EdgeInsets.all(12),
+                child: slider(),
+
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NeumorphicButton(
+                    onPressed: (){
+
+                    },
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.flat,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Padding(padding: const EdgeInsets.all(20),
+                      child: btnSlow(),),
+
+                  ),
+                  NeumorphicButton(
+                    onPressed: (){
+
+                    },
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.flat,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Padding(padding: const EdgeInsets.all(20),
+                      child: btnStart()),
+
+                  ),
+                  NeumorphicButton(
+                    onPressed: (){
+
+                    },
+                    style: NeumorphicStyle(
+                      shape: NeumorphicShape.flat,
+                    ),
+                    padding: const EdgeInsets.all(12),
+                    child: Padding(padding: const EdgeInsets.all(20),
+                      child: btnFast()),
+
+                  ),
+                ],
               )
+
             ],
           ),
         ),
